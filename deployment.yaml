@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: react-portfolio
+
+spec:
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: react-portfolio
+
+  template:
+    metadata:
+      labels:
+        app: react-portfolio
+
+    spec:
+      containers:
+      - name: react-portfolio
+        image: twinkle17/react-portfolio:v1
+        ports:
+        - containerPort: 80
